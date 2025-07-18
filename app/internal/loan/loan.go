@@ -1,6 +1,8 @@
 package loan
 
-import "time"
+import (
+	"time"
+)
 
 // LoanApplication represents a loan application request
 type LoanApplication struct {

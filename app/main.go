@@ -46,6 +46,9 @@ func main() {
 	// Set up validator
 	e.Validator = internal.NewValidator()
 
+	// initialize database
+	// databaseLoan := database.InitDatabase(conf.Database)
+
 	// Initialize services
 	restSvc := loan.NewService()
 	restHdl := loan.NewHandler(restSvc)

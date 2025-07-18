@@ -11,6 +11,11 @@ performance:
   gc_percent: 100
 
 database:
+  host: "localhost"
+  port: 5432
+  user: "loan_user"
+  password: "loan_password"
+  dbname: "loan_db"
   max_open_conns: 100
   max_idle_conns: 10
   conn_max_lifetime: "1h"
