@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: loan-postgres
+    environment:
+      POSTGRES_DB: loan_db
+      POSTGRES_USER: loan_user
+      POSTGRES_PASSWORD: loan_password
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d
+    networks:
+      - loan-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U loan_user -d loan_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: loan-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - loan-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: redis-server --appendonly yes
+
+  adminer:
+    image: adminer:latest
+    container_name: loan-adminer
+    ports:
+      - "8081:8080"
+    networks:
+      - loan-network
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  loan-network:
+    driver: bridge

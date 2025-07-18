@@ -1,0 +1,123 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+dist/
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below to include it)
+vendor/
+
+# Go workspace file
+go.work
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Log files
+*.log
+logs/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+tmp/
+temp/
+
+# Build artifacts
+build/
+target/
+
+# Docker volumes
+postgres_data/
+redis_data/
+
+# Configuration files with sensitive data
+config/local.yaml
+config/production.yaml
+config/secrets.yaml
+
+# Test coverage
+coverage.out
+coverage.html
+
+# Air live reload
+.air.toml
+tmp/
+
+# Local development
+local/
+dev/
+
+# Backup files
+*.bak
+*.backup
+
+# Node modules (if using any JS tools)
+node_modules/
+
+# Python cache (if using any Python tools)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
